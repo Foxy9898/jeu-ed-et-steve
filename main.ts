@@ -210,6 +210,7 @@ controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Repea
             `, p2, 0, 100)
         controller.configureRepeatEventDefaults(10, 1000)
     }
+    pause(500)
 })
 controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Released, function () {
     controller.player2.moveSprite(p2, 100, 100)
@@ -235,7 +236,7 @@ controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Repea
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `, p1, 50, -50)
-        controller.configureRepeatEventDefaults(10, 1000)
+        controller.configureRepeatEventDefaults(1, 500)
     } else if (controller.left.isPressed() && controller.up.isPressed()) {
         bullet = sprites.createProjectileFromSprite(img`
             . . . . . . . . . . . . . . . . 
@@ -255,7 +256,7 @@ controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Repea
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `, p1, -50, -50)
-        controller.configureRepeatEventDefaults(10, 1000)
+        controller.configureRepeatEventDefaults(1, 500)
     } else if (controller.left.isPressed() && controller.down.isPressed()) {
         bullet = sprites.createProjectileFromSprite(img`
             . . . . . . . . . . . . . . . . 
@@ -275,7 +276,7 @@ controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Repea
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `, p1, -50, 50)
-        controller.configureRepeatEventDefaults(10, 1000)
+        controller.configureRepeatEventDefaults(1, 500)
     } else if (controller.right.isPressed() && controller.down.isPressed()) {
         bullet = sprites.createProjectileFromSprite(img`
             . . . . . . . . . . . . . . . . 
@@ -295,7 +296,7 @@ controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Repea
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `, p1, 50, 50)
-        controller.configureRepeatEventDefaults(10, 1000)
+        controller.configureRepeatEventDefaults(1, 500)
     } else if (controller.right.isPressed()) {
         bullet = sprites.createProjectileFromSprite(img`
             . . . . . . . . . . . . . . . . 
@@ -315,7 +316,7 @@ controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Repea
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `, p1, 100, 0)
-        controller.configureRepeatEventDefaults(10, 1000)
+        controller.configureRepeatEventDefaults(1, 500)
     } else if (controller.up.isPressed()) {
         bullet = sprites.createProjectileFromSprite(img`
             . . . . . . . . . . . . . . . . 
@@ -335,7 +336,7 @@ controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Repea
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `, p1, 0, -100)
-        controller.configureRepeatEventDefaults(10, 1000)
+        controller.configureRepeatEventDefaults(1, 500)
     } else if (controller.left.isPressed()) {
         bullet = sprites.createProjectileFromSprite(img`
             . . . . . . . . . . . . . . . . 
@@ -355,7 +356,7 @@ controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Repea
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `, p1, -100, 0)
-        controller.configureRepeatEventDefaults(10, 1000)
+        controller.configureRepeatEventDefaults(1, 500)
     } else if (controller.down.isPressed()) {
         bullet = sprites.createProjectileFromSprite(img`
             . . . . . . . . . . . . . . . . 
@@ -375,8 +376,9 @@ controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Repea
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `, p1, 0, 100)
-        controller.configureRepeatEventDefaults(10, 1000)
+        controller.configureRepeatEventDefaults(1, 500)
     }
+    pause(500)
 })
 controller.player2.onEvent(ControllerEvent.Connected, function () {
     mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(img`
