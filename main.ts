@@ -44,6 +44,340 @@ controller.player3.onEvent(ControllerEvent.Connected, function () {
     controller.player3.moveSprite(p3, 100, 100)
     p3.setPosition(28, 91)
 })
+controller.player3.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Released, function () {
+    controller.player3.moveSprite(p3, 100, 100)
+})
+controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Repeated, function () {
+    controller.player2.moveSprite(p2, 0, 0)
+    if (controller.right.isPressed() && controller.up.isPressed()) {
+        projectile2 = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p2, 50, -50)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.left.isPressed() && controller.up.isPressed()) {
+        projectile2 = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p2, -50, -50)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.left.isPressed() && controller.down.isPressed()) {
+        projectile2 = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p2, -50, 50)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.right.isPressed() && controller.down.isPressed()) {
+        projectile2 = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p2, 50, 50)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.right.isPressed()) {
+        projectile2 = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p2, 100, 0)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.up.isPressed()) {
+        projectile2 = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p2, 0, -100)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.left.isPressed()) {
+        projectile2 = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p2, -100, 0)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.down.isPressed()) {
+        projectile2 = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p2, 0, 100)
+        controller.configureRepeatEventDefaults(10, 1000)
+    }
+})
+controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Released, function () {
+    controller.player2.moveSprite(p2, 100, 100)
+})
+controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Repeated, function () {
+    controller.player1.moveSprite(p1, 0, 0)
+    if (controller.right.isPressed() && controller.up.isPressed()) {
+        bullet = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p1, 50, -50)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.left.isPressed() && controller.up.isPressed()) {
+        bullet = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p1, -50, -50)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.left.isPressed() && controller.down.isPressed()) {
+        bullet = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p1, -50, 50)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.right.isPressed() && controller.down.isPressed()) {
+        bullet = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p1, 50, 50)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.right.isPressed()) {
+        bullet = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p1, 100, 0)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.up.isPressed()) {
+        bullet = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p1, 0, -100)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.left.isPressed()) {
+        bullet = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p1, -100, 0)
+        controller.configureRepeatEventDefaults(10, 1000)
+    } else if (controller.down.isPressed()) {
+        bullet = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 4 5 4 5 5 . . . . . . 
+            . . . 5 5 5 4 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . 5 5 5 5 5 5 5 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, p1, 0, 100)
+        controller.configureRepeatEventDefaults(10, 1000)
+    }
+})
 controller.player2.onEvent(ControllerEvent.Connected, function () {
     mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(img`
         ........................
@@ -75,25 +409,8 @@ controller.player2.onEvent(ControllerEvent.Connected, function () {
     controller.player2.moveSprite(p2, 100, 100)
     p2.setPosition(136, 40)
 })
-controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
-    bullet = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . 5 5 5 5 5 5 5 . . . . . . 
-        . . . 5 5 5 5 5 5 5 . . . . . . 
-        . . . 5 5 5 4 5 5 5 . . . . . . 
-        . . . 5 5 4 5 4 5 5 . . . . . . 
-        . . . 5 5 5 4 5 5 5 . . . . . . 
-        . . . 5 5 5 5 5 5 5 . . . . . . 
-        . . . 5 5 5 5 5 5 5 . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, p1, 50, 50)
+controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Released, function () {
+    controller.player1.moveSprite(p1, 100, 100)
 })
 controller.player1.onEvent(ControllerEvent.Connected, function () {
     mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(img`
@@ -126,8 +443,9 @@ controller.player1.onEvent(ControllerEvent.Connected, function () {
     controller.player1.moveSprite(p1, 100, 100)
     p1.setPosition(28, 91)
 })
-let p1: Sprite = null
 let bullet: Sprite = null
+let p1: Sprite = null
+let projectile2: Sprite = null
 let p2: Sprite = null
 let p3: Sprite = null
 let p4: Sprite = null

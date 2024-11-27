@@ -3,7 +3,9 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "multiplayer": "*"
+        "multiplayer": "*",
+        "controller": "*",
+        "darts": "*"
     },
     "files": [
         "main.blocks",
